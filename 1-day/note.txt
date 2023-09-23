@@ -1,0 +1,17 @@
+type superset of the js
+(js feature is already available)
+developed by the microsoft
+object oriented
+
+class, namespace and other features of the class are used
+
+2012 1 oct developed by the microsoft
+
+easy code management
+support ECMAscript
+we can use data types,calsses, interface
+IDE supports
+
+interface in typescript
+class and object  blueprint with the types.
+
