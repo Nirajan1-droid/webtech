@@ -1,0 +1,32 @@
+table {
+    border: 2px solid forestgreen;
+    width: 800px;
+    height: 200px;
+}
+ 
+th {
+    border-bottom: 1px solid black;
+}
+
+td {
+    /* text-align: center; */
+    padding-bottom: 0px;
+    padding: 8px; /* Add padding to cells for spacing */
+    text-align: left; /* Optional: Align cell content */
+}
+tr{
+    border-bottom: 1px solid black;
+    padding-bottom: 0px;
+    gap: 0px;
+
+
+}
+table td::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    border-right: 1px solid #dc3333; /* Vertical line style */
+  }
+ 
