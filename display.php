@@ -1,3 +1,5 @@
+<?php include('header.php');?>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" crossorigin="anonymous" rel="stylesheet">
 <?php
 $conn = new mysqli('localhost','root','','web_nirajan');
@@ -25,13 +27,23 @@ $list = "<table class='table table-striped table-hover'>
                 <th> Submitted Data</th>
             </tr>";
 $data = "";
-$s = 1;
-while($row= $returncheck -> fetch_assoc())
-{
-    $data = "<tr><td>" . $s. "</td><td>" . $row['task_name']."</td><td>".$row['task_start']."</td><td>".$row['end_date']."</td><td>".$row['user_id'].
-    "</td><td><a href= delete.php?id=".$row['user_id']."type='button' class='btn btn-danger'>Delete</a>"."</td><td><a href= update.php?id=".$row['user_id']."type='button' class='btn btn-success'>update</a>"."</td></tr>";
-    $s++;
-}
+$sn = 1;
+  while($row = $returncheck->fetch_assoc()){
+        // Concatination of string in PHP using '.'
+        $data = $data . "<tr>
+                            <td>" . $sn . "</td>" . 
+                            "<td>" . $row['task_name'] . "</td>" . 
+                            "<td>" . $row['task_start'] . "</td>" . 
+                            "<td>" . $row['end_date'] . "</td>" . 
+                            "<td>" . $row['user_id'] . "</td>" . 
+                            "<td>" . 
+                                "<a href='delete.php?id=" . $row['task_id'] . "' class='btn btn-danger'>Delete</a>" . 
+                                "<a href='edit.php?id=" . $row['task_id'] . "' class='btn btn-success'>Edit</a>" . 
+                            "</td>" . 
+                        "</tr>"; 
+
+        $sn++;
+    }
 
 if($returncheck)
 {
@@ -44,3 +56,5 @@ else{
 
 echo $list.$data.'</table>';
 ?>
+
+<?php include('footer.php')?>
