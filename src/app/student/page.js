@@ -8,13 +8,13 @@ export default function Student()
         student list
         <ul>
             <li>
-                <Link href='student/1/222'>
+                <Link href='student '>
 
                 nirajan
                 </Link>
                 </li>
             <li>
-                <Link href='student/2/222'>
+                <Link href='student '>
 
                 guruji
                 

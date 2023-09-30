@@ -1,0 +1,1 @@
+the loading thing runs only when  you paste the login time content into the loader.js 

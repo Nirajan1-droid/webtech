@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { API_BASE_URL } from "./config/constants";
 
 export default function Home() {
 	const [name, setName] = useState("nira");
@@ -18,6 +19,13 @@ export default function Home() {
 	};
 	return (
 		<main className={styles.main}>
+			{
+				process.env.NODE_ENV=="development"?
+				<h1>you are in development mode</h1>
+				:
+				<h2>you are in the production mode</h2>
+			}
+			<h1>{API_BASE_URL}</h1>
 			<DynamicRouting />
 			<h1>hello</h1>
 			<User user="nirajan" />
@@ -45,8 +53,11 @@ const DynamicRouting = () => {
 		setsId(e.target.value);
 		console.log(e.target.value);
 	};
+	console.log(process.env.NODE_ENV)
 	return (
 		<div>
+			 
+
 			<h1>Dynamic routing</h1>
 			<p>
 				dynamic routing refers to the routing on the basis of the id of the
@@ -96,10 +107,10 @@ const User = (props) => {
 
 const ConditionalLayout = ()=>{
 	return(
-		<>
+		<div>
 		<h1>The conditional layout</h1>
 		<p>we use the usePathName from next/navigation and storing that package as the variable then used the conditional operation !== or === to check (if)?(otherwise implement this):(if implement this) and inside of them the html operaiton is specified along iwth the la</p>
-		</>
+		</div>
 	);
 
 }

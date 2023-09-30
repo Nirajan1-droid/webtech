@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 export default function Studentlist({params})
 {
     console.log(params);
@@ -17,4 +17,11 @@ export default function Studentlist({params})
         
         </>
     )
+}
+
+export async function generateStaticParams(props){
+let users = await props.params.studentlist;
+    return users.map(items({
+        studentlist:items.params.toString()
+    }))   
 }
