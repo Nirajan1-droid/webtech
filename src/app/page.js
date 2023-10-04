@@ -15,10 +15,15 @@ export default function Home() {
 	};
 	const router = useRouter();
 	const InnerComp = () => {
-		return <>another inner component</>;
+		return(
+
+			<div>another inner component</div>
+			) 
 	};
 	return (
 		<main className={styles.main}>
+			<div>
+
 			{
 				process.env.NODE_ENV=="development"?
 				<h1>you are in development mode</h1>
@@ -37,6 +42,7 @@ export default function Home() {
 			<button onClick={() => useRouter().push("/login")}>
 				routing functionality using the useRouter
 			</button>
+			</div>
 		</main>
 	);
 }
@@ -62,14 +68,7 @@ const DynamicRouting = () => {
 			<p>
 				dynamic routing refers to the routing on the basis of the id of the
 				user.we can\t create every single page for each of the link so to{" "}
-				<br></br> route page on the basis of that and render the page from the
-				database the operation are specified in the [page] folder and the name
-				of the 'page' is responsible for nothing just the brackets [ need ] to
-				be there<br></br> the sublink then passed to that file and the{" "}
-				<h3>"export default function Studentlist as params"</h3> catches the
-				sublink "1" from <h2>student/1</h2> to the default function inside that
-				[filename] and the database operation like get,update,delete,post can be
-				done and the dynamical page can be setup for the links.
+				<br></br> route page on 
 			</p>
 
 			<h6>TRY</h6>
