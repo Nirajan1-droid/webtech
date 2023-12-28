@@ -18,7 +18,7 @@ else{
         $type=$_POST['ddlUser'];
     
         $sql="INSERT INTO user( user_type, full_name, email, password ) VALUES ('$type','$fullname', '$email', '$pass' )";
-       
+       // INSERT INTO database()
         $ret=$conn->query($sql);
         if($ret)
         {
